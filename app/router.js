@@ -13,8 +13,14 @@ Router.map(function() {
   this.route('login');
 
   this.route('auth', { path: '/' }, function() {
-    this.slide('01-title');
-    this.slide('02-intercom');
+    this.role('screen');
+    this.role('presenter');
+    this.role('audience');
+
+    this.route('slides', function() {
+      this.slide('01-title');
+      this.slide('02-intercom');
+    });
   });
 });
 

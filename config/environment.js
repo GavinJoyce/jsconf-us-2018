@@ -12,6 +12,31 @@ module.exports = function(environment) {
     emberPresent: {
       socketServerUrl: 'http://localhost:5200',
       socketServerPort: 5200,
+      roles: {
+        presenter: {
+          name: 'presenter',
+          type: 'responsive',
+          password: 'presenterpassword',
+          route: 'auth.presenter'
+        },
+        notes: {
+          name: 'notes',
+          type: 'scaled',
+          password: 'notespassword',
+          route: 'auth.notes'
+        },
+        screen: {
+          name: 'screen',
+          type: 'scaled',
+          password: 'screenpassword',
+          route: 'auth.screen'
+        },
+        audience: {
+          name: 'audience',
+          type: 'responsive',
+          route: 'auth.audience'
+        }
+      }
     },
     EmberENV: {
       FEATURES: {
