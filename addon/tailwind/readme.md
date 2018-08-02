@@ -1,0 +1,1 @@
+It seems that `addon/tailwind` needs to exist in order for tailwind styles from `ember-present` to be included. I suspect that this is a bug: https://github.com/embermap/ember-cli-tailwind/pull/35/files#r207253316
