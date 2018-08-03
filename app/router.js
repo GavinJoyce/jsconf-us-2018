@@ -18,8 +18,8 @@ Router.map(function() {
     this.role('audience');
 
     this.route('slides', function() {
-      this.slide('01-title');
-      this.slide('02-intercom');
+      this.slide('01-title', { transition: 'slide' });
+      this.slide('02-intercom', { transition: 'slide' });
     });
   });
 });
