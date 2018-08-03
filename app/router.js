@@ -19,7 +19,13 @@ Router.map(function() {
 
     this.route('slides', function() {
       this.slide('01-title', { transition: 'slide' });
-      this.slide('02-intercom', { transition: 'slide' });
+      this.slide('02a-intro', { transition: 'slide' });
+      this.slide('03a-tech', { transition: 'slide' });
+      this.slide('04a-ember-present', { transition: 'slide' });
+      this.slide('05-login', { transition: 'slide' });
+      this.slide('06a-realtime-drums', { transition: 'slide' });
+      this.slide('07a-beethovens-5th', { transition: 'slide' });
+      this.slide('08-thanks', { transition: 'slide' });
     });
   });
 });
