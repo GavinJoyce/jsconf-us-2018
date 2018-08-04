@@ -7,8 +7,10 @@ const Router = EmberPresentRouter.extend({
 });
 
 Router.map(function() {
-  this.route('all');
-  this.route('screen-and-presenter');
+  this.route('preview', function() {
+    this.route('all');
+    this.route('screen-and-presenter');
+  });
 
   this.route('login');
 
