@@ -1,0 +1,9 @@
+{{#slide.content as |content|}}
+
+  {{#each (array 'kick' 'clap') as |sound|}}
+    <button onclick={{action (broadcast 'playSound' (hash sound=sound))}}>
+      {{sound}}
+    </button>
+  {{/each}}
+
+{{/slide.content}}
