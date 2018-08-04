@@ -1,0 +1,15 @@
+{{#slide.content}}
+  <div class="self-center p-4 mb-4 text-pink text-5xl">
+  {{#if latencyCountData}}
+    <h1>Reports for {{latencyCountData.count}} clients</h1>
+
+    <ul>
+      {{#each-in latencyCountData.counts as |latencyMs clientCount|}}
+        <li>{{latencyMs}}ms for {{clientCount}} clients</li>
+      {{/each-in}}
+    </ul>
+  {{else}}
+    waiting for data
+  {{/if}}
+  </div>
+{{/slide.content}}
