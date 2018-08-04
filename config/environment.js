@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'jsconf-us-2018',
+    podModulePrefix: 'jsconf-us-2018/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
