@@ -1,0 +1,9 @@
+{{#slide.content}}
+  <div class="fixed pin bg-pink">
+    {{counts-chart
+      countData=serverOffsetCountData
+      title="Clock drift"
+      subtitle=(concat "Reports for " latencyCountData.count " clients")
+    }}
+  </div>
+{{/slide.content}}
