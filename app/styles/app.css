@@ -1,0 +1,10 @@
+
+
+@font-face {
+  font-family: "Hershey Roman";
+  src: url("/fonts/HersheyRoman-Light.woff") format("woff");
+}
+
+.font-hershey {
+  font-family: "Hershey Roman";
+}

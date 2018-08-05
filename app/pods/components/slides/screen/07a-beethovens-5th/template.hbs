@@ -1,13 +1,18 @@
-{{#slide.content}}
+<div class="bg-yellow pin fixed">
   {{connected-users}}
+</div>
 
-  <div class="self-center p-4 mb-4 text-blue text-5xl">
-    <h1 class="text-shadow">Beethoven's 5th...</h1>
+{{#slide.content}}
+  <div class="self-center p-4 mb-4 text-10xl text-black">
+    <h1 class="uppercase font-hershey font-thin">Beethoven's 5th</h1>
   </div>
 
-  <ul class="text-5xl">
+  <div class="self-center flex justify-between content-start flex-wrap p-4 mb-4 m-16 font-hershey text-red">
     {{#each beethoven12Audio.sounds as |sound|}}
-      <li>{{sound}} : {{or (get counts sound) 0}}</li>
+      <div class="w-1/6 py-4">
+        <h2 class="text-5xl pb-4">{{sound}}</h2>
+        <h2 class="text-blue-light text-14xl font-thin">{{or (get counts sound) 0}}</h2>
+      </div>
     {{/each}}
-  </ul>
+  </div>
 {{/slide.content}}
