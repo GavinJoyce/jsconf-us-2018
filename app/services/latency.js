@@ -16,6 +16,8 @@ export default Service.extend(RunMixin, {
   session: inject(),
   userAgent: inject(),
 
+  addRandomAudienceLatency: true, //useful for testing locally
+
   pongResponses: null,
   fastestResponse: null,
   slowestResponse: null,
@@ -87,6 +89,11 @@ export default Service.extend(RunMixin, {
     let now = Date.now();
 
     let latencyInMs = (now - data.timestamp) / 2;
+
+    if (this.get('addRandomAudienceLatency')) {
+      latencyInMs += randomNumber(200);
+    }
+
     let serverOffsetInMs = now - data.serverTime - latencyInMs;
 
     pongResponses.pushObject({

@@ -1,15 +1,9 @@
 {{#slide.content}}
-  <div class="self-center p-4 mb-4 text-pink text-5xl">
-  {{#if latencyCountData}}
-    <h1>Reports for {{latencyCountData.count}} clients</h1>
-
-    <ul>
-      {{#each-in latencyCountData.counts as |latencyMs clientCount|}}
-        <li>{{latencyMs}}ms for {{clientCount}} clients</li>
-      {{/each-in}}
-    </ul>
-  {{else}}
-    waiting for data
-  {{/if}}
+  <div class="fixed pin bg-yellow">
+    {{counts-chart
+      countData=latencyCountData
+      title="Realtime Latency"
+      subtitle=(concat "Reports for " latencyCountData.count " clients")
+    }}
   </div>
 {{/slide.content}}
