@@ -4,4 +4,10 @@
   <div class="self-center p-4 mb-4 text-blue text-5xl">
     <h1 class="text-shadow">Beethoven's 5th...</h1>
   </div>
+
+  <ul class="text-5xl">
+    {{#each beethoven12Audio.sounds as |sound|}}
+      <li>{{sound}} : {{or (get counts sound) 0}}</li>
+    {{/each}}
+  </ul>
 {{/slide.content}}

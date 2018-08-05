@@ -1,0 +1,7 @@
+{{#slide.content as |content|}}
+
+  <button class="border" onclick={{action (broadcast 'assignSymphonyInstruments')}}>Assign Instruments</button>
+
+  <button class="border" onclick={{action (broadcast 'playSymphony' (hash delayInMs=1000))}}>Play</button>
+
+{{/slide.content}}
