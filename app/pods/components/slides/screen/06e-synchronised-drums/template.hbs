@@ -1,8 +1,19 @@
-{{#slide.content}}
+<div class="bg-black pin fixed">
   {{connected-users}}
+</div>
 
-  <div class="self-center p-4 mb-4 text-indigo text-5xl">
-    <h1 class="text-shadow">Synchronised Drums...</h1>
-    <h2>playingSound: {{playingSound}}</h2>
+{{#slide.content}}
+  <div class="self-center p-4 mb-4 text-8xl text-orange">
+    <h1 class="font-hershey">Synchronised Drums</h1>
+  </div>
+
+  <div class="border-2 border-dashed border-blue text-10xl {{if playingSound 'bg-blue'}} text-yellow p-16 w-4/5">
+    <h1 class="font-hershey">
+      {{#if playingSound}}
+        {{playingSound}}
+      {{else}}
+        &nbsp;
+      {{/if}}
+    </h1>
   </div>
 {{/slide.content}}

@@ -1,12 +1,14 @@
-{{#slide.content}}
+<div class="bg-black pin fixed">
   {{connected-users}}
+</div>
 
-  <div class="self-center p-4 mb-4 text-indigo text-5xl">
-    <h1 class="text-shadow">Realtime drums...</h1>
+{{#slide.content}}
+  <div class="self-center p-4 mb-4 text-8xl text-orange">
+    <h1 class="font-hershey">Realtime Drums</h1>
   </div>
 
-  <div class="self-center p-4 mb-4 text-indigo text-5xl">
-    <h1 class="text-yellow">
+  <div class="border-2 border-dashed border-blue text-10xl {{if playingSound 'bg-blue'}} text-yellow p-16 w-4/5">
+    <h1 class="font-hershey">
       {{#if playingSound}}
         {{playingSound}}
       {{else}}
