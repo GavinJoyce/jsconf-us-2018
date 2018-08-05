@@ -38,7 +38,7 @@
       "loop": false
     },
     {
-      "name": "fifteenStepHalf",
+      "name": "15step", //half
       "start": 174,
       "duration": 3.1579138321995464,
       "loop": false
