@@ -1,0 +1,21 @@
+{{#slide.content as |content|}}
+
+  {{#each (array 'kick' 'clap') as |sound|}}
+    <button onclick={{action (broadcast 'playSound' (hash sound=sound targetOs=targetOs delayInMs=1000))}}>
+      {{sound}}
+    </button>
+  {{/each}}
+
+  <hr>
+  <h2>targetOs: {{targetOs}}</h2>
+  <button onclick={{action (mut targetOs) undefined}}>All</button>
+  <button onclick={{action (mut targetOs) 'iOS'}}>iOS</button>
+  <button onclick={{action (mut targetOs) 'Android'}}>Android</button>
+  <button onclick={{action (mut targetOs) 'Mac OS|iOS'}}>🍏</button>
+
+  <hr>
+  <button onclick={{action (broadcast 'playSound' (hash sound='fifteenStepHalf' targetOs=targetOs delayInMs=1000))}}>
+    fifteenStepHalf
+  </button>
+
+{{/slide.content}}
