@@ -20,12 +20,6 @@ module.exports = function(environment) {
           password: 'presenterpassword',
           route: 'auth.presenter'
         },
-        notes: {
-          name: 'notes',
-          type: 'scaled',
-          password: 'notespassword',
-          route: 'auth.notes'
-        },
         screen: {
           name: 'screen',
           type: 'scaled',
@@ -36,7 +30,13 @@ module.exports = function(environment) {
           name: 'audience',
           type: 'responsive',
           route: 'auth.audience'
-        }
+        },
+        ableton: {
+          name: 'ableton',
+          type: 'responsive',
+          password: 'abletonpassword',
+          route: 'auth.ableton'
+        },
       }
     },
     EmberENV: {

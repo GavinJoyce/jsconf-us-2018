@@ -18,6 +18,7 @@ Router.map(function() {
     this.role('screen');
     this.role('presenter');
     this.role('audience');
+    this.role('ableton');
 
     this.route('slides', function() {
       //title
@@ -46,8 +47,13 @@ Router.map(function() {
       //beethoven's 5th
       this.slide('07a-beethovens-5th', { transition: 'slide' });
 
+      //Ableton live
+      this.slide('08a-left-middle-right', { transition: 'slide' });
+      this.slide('08b-technology', { transition: 'slide' });
+      this.slide('08c-song', { transition: 'slide' });
+
       //thanks
-      this.slide('08-thanks', { transition: 'slide' });
+      this.slide('09-thanks', { transition: 'slide' });
     });
   });
 });
