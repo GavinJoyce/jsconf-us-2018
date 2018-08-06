@@ -27,5 +27,11 @@ export default Service.extend({
       sprite.setVolume(volume);
       sprite.play(sound);
     }
+  },
+
+  actions: {
+    play() {
+      this.play.apply(this, arguments);
+    }
   }
 });

@@ -1,0 +1,17 @@
+{{#slide.content}}
+  <div class="self-center p-4 mb-4">
+    <h1 class="text-yellow">
+      Please turn up your sound
+    </h1>
+  </div>
+
+  {{#if audio.isSpriteLoaded}}
+    <p>Press these to test:</p>
+
+    {{#each (array 'kick' 'snare') as |sound|}}
+      <button onclick={{action 'play' sound target=audio}}>{{sound}}</button>
+    {{/each}}
+  {{else}}
+    <p>Loading audio sprite...</p>
+  {{/if}}
+{{/slide.content}}
