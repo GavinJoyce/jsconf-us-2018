@@ -37,6 +37,10 @@ module.exports = function(environment) {
           password: 'abletonpassword',
           route: 'auth.ableton'
         },
+        'midi-gateway': {
+          name: 'midi-gateway',
+          password: 'midipassword',
+        },
       }
     },
     EmberENV: {

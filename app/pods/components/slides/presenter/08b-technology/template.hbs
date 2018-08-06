@@ -1,0 +1,5 @@
+{{#slide.content as |content|}}
+  <button onclick={{action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToTerminal')}}>
+    switch to terminal
+  </button>
+{{/slide.content}}
