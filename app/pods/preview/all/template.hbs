@@ -1,11 +1,9 @@
 <style>
   .iframe-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 0px;
-    background-color: #fff;
-    color: #444;
+    grid-gap: 10px;
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -19,17 +17,18 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    border: 0;
+    border: 1px solid yellow;
   }
 
   iframe.responsive {
-    width: 50%;
+    width: 90%;
     margin: auto;
     background-color: #eee;
   }
 
   iframe.screen {
     background-color: #03a9f4;
+     grid-column: span 3;
   }
 
   iframe.presenter {
@@ -39,10 +38,17 @@
   iframe.audience {
     background-color: #ffeb3b;
   }
+
+  iframe.ableton {
+    background-color: #aaff3b;
+     grid-row: span 2;
+
+  }
 </style>
 
 <div class='iframe-grid'>
   <iframe src='{{href-to "login"}}' class='scaled screen' />
+  <iframe src='{{href-to "login"}}' class='responsive ableton' />
   <iframe src='{{href-to "login"}}' class='responsive presenter' />
   <iframe src='{{href-to "login"}}' class='responsive audience' />
   <iframe src='{{href-to "login"}}' class='responsive audience' />

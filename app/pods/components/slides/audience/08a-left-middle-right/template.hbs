@@ -1,0 +1,9 @@
+{{#slide.content}}
+
+  <h1 class='text-center'>Choose your section</h1>
+
+  {{#each (array 'left' 'middle' 'right') as |section|}}
+    <button onclick={{action (update-user-data 'section' section)}}>{{section}}</button>
+  {{/each}}
+
+{{/slide.content}}
