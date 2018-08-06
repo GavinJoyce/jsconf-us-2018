@@ -1,6 +1,6 @@
 {{#slide.content as |content|}}
 
-  {{#each (array 'kick' 'clap' '15step') as |sound|}}
+  {{#each (array 'kick' 'clap' '15step (½)') as |sound|}}
     <button onclick={{action (broadcast 'playSound' (hash sound=sound))}}>
       {{sound}}
     </button>

@@ -32,31 +32,31 @@
       "loop": false
     },
     {
-      "name": "fifteenStep",
+      "name": "15step",
       "start": 166,
       "duration": 6.315804988662132,
       "loop": false
     },
     {
-      "name": "15step", //half
+      "name": "15step (½)",
       "start": 174,
       "duration": 3.1579138321995464,
       "loop": false
     },
     {
-      "name": "fifteenStepLeft",
+      "name": "15step left",
       "start": 179,
       "duration": 6.315804988662132,
       "loop": false
     },
     {
-      "name": "fifteenStepMiddle",
+      "name": "15step middle",
       "start": 187,
       "duration": 6.315804988662132,
       "loop": false
     },
     {
-      "name": "fifteenStepRight",
+      "name": "15step right",
       "start": 195,
       "duration": 6.315804988662132,
       "loop": false
