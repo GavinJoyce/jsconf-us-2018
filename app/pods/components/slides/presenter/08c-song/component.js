@@ -10,6 +10,15 @@ export default Component.extend(Realtime, {
     unassignPerson(instrument) {
       this._unassignPerson(instrument);
     },
+
+    play() {
+      this.broadcastToRole('midi-gateway', 'liveControl', { command: 'play' });
+    },
+
+    stop() {
+      this.broadcastToRole('midi-gateway', 'liveControl', { command: 'stop' });
+    },
+
   },
 
   _assignPerson: task(function * (instrument, section) {

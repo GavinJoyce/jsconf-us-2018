@@ -1,43 +1,21 @@
 {{#slide.content}}
   <div class="flex flex-col h-screen bg-black p-2">
-    <div class="flex-1 flex flex-col">
-      <div class="flex-shrink text-center text-xl font-bold font-hershey pt-2">
-        <span class="text-blue-light">Pad 1</span>
-        <span class="text-yellow">{{pad1.username}}</span>
-      </div>
-      <div class="flex-grow {{if pad1 'bg-red' 'bg-red-darker'}}">
-
-      </div>
-    </div>
-
-    <div class="flex-1 flex flex-col">
-      <div class="flex-shrink text-center text-xl font-bold font-hershey pt-2">
-        <span class="text-blue-light">Pad 2</span>
-        <span class="text-yellow">{{pad2.username}}</span>
-      </div>
-      <div class="flex-grow {{if pad2 'bg-green' 'bg-green-darker'}}">
-
-      </div>
-    </div>
-
-    <div class="flex-1 flex flex-col">
-      <div class="flex-shrink text-center text-xl font-bold font-hershey pt-2">
-        <span class="text-blue-light">Mini V3</span>
-        <span class="text-yellow">{{miniV3.username}}</span>
-      </div>
-      <div class="flex-grow {{if miniV3 'bg-orange' 'bg-orange-darker'}}">
-
-      </div>
-    </div>
-
-    <div class="flex-1 flex flex-col">
-      <div class="flex-shrink text-center text-xl font-bold font-hershey pt-2">
-        <span class="text-blue-light">Prophet V3</span>
-        <span class="text-yellow">{{prophetV3.username}}</span>
-      </div>
-      <div class="flex-grow {{if prophetV3 'bg-blue' 'bg-blue-darker'}}">
-
-      </div>
-    </div>
+    {{#each-in song as |_ instrument|}}
+      {{#let (get this instrument.id) as |musician|}}
+        <div class="flex-1 flex flex-col">
+          <div class="flex-shrink text-center text-xl font-bold font-hershey py-2">
+            <span class="text-blue-light">{{instrument.name}}</span>
+            <span class="text-yellow">{{musician.username}}</span>
+          </div>
+          <div class="flex-grow {{if musician instrument.lightBackgroundClass instrument.darkBackgroundClass}}">
+            {{instrument-xy
+              xy=(get this (concat instrument.id 'Xy'))
+              beat=beat
+              instrument=instrument
+            }}
+          </div>
+        </div>
+      {{/let}}
+    {{/each-in}}
   </div>
 {{/slide.content}}
