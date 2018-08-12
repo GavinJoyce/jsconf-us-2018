@@ -1,7 +1,7 @@
 <style>
   .iframe-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px;
     width: 100vw;
@@ -28,7 +28,7 @@
 
   iframe.screen {
     background-color: #03a9f4;
-     grid-column: span 3;
+     grid-column: span 5;
   }
 
   iframe.presenter {
@@ -50,6 +50,8 @@
   <iframe src='{{href-to "login"}}' class='scaled screen' />
   <iframe src='{{href-to "login"}}' class='responsive ableton' />
   <iframe src='{{href-to "login"}}' class='responsive presenter' />
+  <iframe src='{{href-to "login"}}' class='responsive audience' />
+  <iframe src='{{href-to "login"}}' class='responsive audience' />
   <iframe src='{{href-to "login"}}' class='responsive audience' />
   <iframe src='{{href-to "login"}}' class='responsive audience' />
 </div>

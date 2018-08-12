@@ -55,6 +55,8 @@ function applicationControl(data) {
 }
 
 function sendKey(data) {
+  console.log('sendKey', data);
+
   let using = '';
   if(data.commandOption) {
     using = ' using {command down, option down}';
