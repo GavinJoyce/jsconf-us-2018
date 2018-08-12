@@ -1,0 +1,48 @@
+{{#slide.content as |content|}}
+
+  <div>
+    {{content.button text="Switch to terminal" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToTerminal'))}}
+    {{content.button text="Switch to live" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToLive'))}}
+  </div>
+
+  <div>
+    {{content.button
+      text="Enable loop"
+      onClick=(action (broadcast-to-role 'midi-gateway' 'sendKey') (hash key='l'))
+    }}
+  </div>
+
+  <div>
+    {{content.button
+      text="Chorus"
+      onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=108))
+    }}
+  </div>
+
+  <p>
+    I'll first select someone on the left side at random to control the first instrument, Pad 1.
+  </p>
+
+  <div>
+    {{content.button text="+ Pad1" onClick=(action 'assignPerson' 'pad1' 'left')}}
+    {{content.button text="- Pad1" onClick=(action 'unassignPerson' 'pad1')}}
+  </div>
+
+  <div>
+    {{content.button text="+ Pad2" onClick=(action 'assignPerson' 'pad2' 'right')}}
+    {{content.button text="- Pad2" onClick=(action 'unassignPerson' 'pad2')}}
+  </div>
+
+  <div>
+    {{content.button text="+ MiniV3" onClick=(action 'assignPerson' 'miniV3' 'middle')}}
+    {{content.button text="- MiniV3" onClick=(action 'unassignPerson' 'miniV3')}}
+  </div>
+
+  <div>
+    {{content.button text="+ ProphetV3" onClick=(action 'assignPerson' 'prophetV3' 'middle')}}
+    {{content.button text="- ProphetV3" onClick=(action 'unassignPerson' 'prophetV3')}}
+  </div>
+
+
+
+{{/slide.content}}

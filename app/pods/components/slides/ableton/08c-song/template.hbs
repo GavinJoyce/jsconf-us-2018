@@ -1,7 +1,43 @@
 {{#slide.content}}
-  <div class="self-center p-4 mb-4">
-    <h1 class="text-yellow">
-      XY controllers will go here
-    </h1>
+  <div class="flex flex-col h-screen bg-black p-2">
+    <div class="flex-1 flex flex-col">
+      <div class="flex-shrink text-center text-xl font-bold font-hershey pt-2">
+        <span class="text-blue-light">Pad 1</span>
+        <span class="text-yellow">{{pad1.username}}</span>
+      </div>
+      <div class="flex-grow {{if pad1 'bg-red' 'bg-red-darker'}}">
+
+      </div>
+    </div>
+
+    <div class="flex-1 flex flex-col">
+      <div class="flex-shrink text-center text-xl font-bold font-hershey pt-2">
+        <span class="text-blue-light">Pad 2</span>
+        <span class="text-yellow">{{pad2.username}}</span>
+      </div>
+      <div class="flex-grow {{if pad2 'bg-green' 'bg-green-darker'}}">
+
+      </div>
+    </div>
+
+    <div class="flex-1 flex flex-col">
+      <div class="flex-shrink text-center text-xl font-bold font-hershey pt-2">
+        <span class="text-blue-light">Mini V3</span>
+        <span class="text-yellow">{{miniV3.username}}</span>
+      </div>
+      <div class="flex-grow {{if miniV3 'bg-orange' 'bg-orange-darker'}}">
+
+      </div>
+    </div>
+
+    <div class="flex-1 flex flex-col">
+      <div class="flex-shrink text-center text-xl font-bold font-hershey pt-2">
+        <span class="text-blue-light">Prophet V3</span>
+        <span class="text-yellow">{{prophetV3.username}}</span>
+      </div>
+      <div class="flex-grow {{if prophetV3 'bg-blue' 'bg-blue-darker'}}">
+
+      </div>
+    </div>
   </div>
 {{/slide.content}}
