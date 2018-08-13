@@ -73,14 +73,14 @@ function instrumentXy(data) {
   let instrument = INSTRUMENTS[data.instrument];
 
   if(instrument) {
-    if(data.x !== undefined) {
-      let x = Math.round((data.x / 100) * 127); //TODO: do on server?
+    if(data.xPercent !== undefined) {
+      let x = Math.round((data.xPercent / 100) * 127); //TODO: do on server?
       console.log('send x', [176, instrument.xNote, x]);
       midiOutput.sendMessage([176, instrument.xNote, x]);
     }
 
-    if(data.y !== undefined) {
-      let y = Math.round((data.y / 100) * 127);
+    if(data.yPercent !== undefined) {
+      let y = Math.round((data.yPercent / 100) * 127);
       console.log('send y', [176, instrument.yNote, y]);
       midiOutput.sendMessage([176, instrument.yNote, y]);
     }
