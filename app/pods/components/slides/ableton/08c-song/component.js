@@ -2,9 +2,12 @@ import Component from '@ember/component';
 import Realtime from 'ember-present/mixins/realtime';
 import { computed } from '@ember/object';
 import { task, timeout } from 'ember-concurrency';
+import song from 'jsconf-us-2018/data/song';
 
 export default Component.extend(Realtime, {
   users: undefined,
+
+  beat: undefined,
 
   pad1Xy: undefined,
   pad2Xy: undefined,
@@ -31,12 +34,21 @@ export default Component.extend(Realtime, {
     this._super(...arguments);
 
     this.set('users', []);
+    this.set('song', song);
   },
 
   didInsertElement() {
     this._super(...arguments);
 
     this.get('pollInstruments').perform();
+
+    this.addRealtimeListener('instrumentXy', (data) => {
+      this.set(`${data.instrument}Xy`, data);
+    });
+
+    this.addRealtimeListener('songBeat', ({ beat }) => {
+      this.set('beat', beat);
+    });
   },
 
   pollInstruments: task(function * () { //TODO: replace with a real time primitive that scales

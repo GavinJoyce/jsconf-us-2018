@@ -1,3 +1,14 @@
 {{#slide.content}}
-  SONG: [{{instrument}}]
+  {{#if instrument}}
+    <div class="fixed pin {{instrumentData.lightBackgroundClass}}">
+      You are controlling the {{instrument}}
+      <h4>{{beat}}</h4>
+
+      {{inputs/xy-input
+        onChange=(action 'onChange')
+      }}
+    </div>
+  {{else}}
+    Please stand by...
+  {{/if}}
 {{/slide.content}}
