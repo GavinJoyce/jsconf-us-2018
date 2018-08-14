@@ -83,7 +83,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
     ENV.emberPresent = {
-      socketServerUrl: 'http://54.164.129.254:5300',
+      socketServerUrl: 'http://jsconf-us-2018-socket-server.gavinjoyce.com:5300',
       socketServerPort: 5300,
       roles: {
         presenter: {

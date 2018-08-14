@@ -9,7 +9,7 @@ midiInput.ignoreTypes(false, false, false); //(Sysex, Timing, Active Sensing)
 const exec = require("child_process").exec;
 const io = require('socket.io-client');
 // const socket = io('http://localhost:5200');
-const socket = io('http://54.164.129.254:5300');
+const socket = io('http://jsconf-us-2018-socket-server.gavinjoyce.com:5300');
 
 const INSTRUMENTS = {
   pad1: { xNote: 1, yNote: 2 },
