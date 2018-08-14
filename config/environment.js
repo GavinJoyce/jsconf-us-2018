@@ -82,6 +82,39 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.emberPresent = {
+      socketServerUrl: 'http://54.164.129.254:5300',
+      socketServerPort: 5300,
+      roles: {
+        presenter: {
+          name: 'presenter',
+          type: 'responsive',
+          password: 'presenterpassword', //TODO: from ENV
+          route: 'auth.presenter'
+        },
+        screen: {
+          name: 'screen',
+          type: 'scaled',
+          password: 'screenpassword',
+          route: 'auth.screen'
+        },
+        audience: {
+          name: 'audience',
+          type: 'responsive',
+          route: 'auth.audience'
+        },
+        ableton: {
+          name: 'ableton',
+          type: 'responsive',
+          password: 'abletonpassword',
+          route: 'auth.ableton'
+        },
+        'midi-gateway': {
+          name: 'midi-gateway',
+          password: 'midipassword',
+        },
+      },
+    };
   }
 
   return ENV;
