@@ -26,9 +26,24 @@ Router.map(function() {
 
       //intro
       this.slide('02a-intro', { transition: 'slide' });
+      this.slide('02b-intercom', { transition: 'slide' });
+      this.slide('02c-books', { transition: 'slide' });
+      this.slide('02d-people', { transition: 'slide' });
+      this.slide('02e-intercomics', { transition: 'slide' });
+      this.slide('02f-events-sf', { transition: 'slide' });
+      this.slide('02g-events-london', { transition: 'slide' });
+      this.slide('02h-events-dublin', { transition: 'slide' });
+      this.slide('02i-vicar-st-empty', { transition: 'slide' });
+      this.slide('02j-vicar-st-full', { transition: 'slide' });
 
-      //tech
+      //previous talks
       this.slide('03a-tech', { transition: 'slide' });
+      this.slide('03b-vicar-st-symphony', { transition: 'slide' });
+      this.slide('03c-vicar-st-freeze', { transition: 'slide' });
+      this.slide('03d-vicar-st-error', { transition: 'slide' });
+      this.slide('03e-emberconf', { transition: 'slide' });
+      this.slide('03f-emberconf-working', { transition: 'slide' });
+      this.slide('03g-emberconf-errors', { transition: 'slide' });
 
       //ember-present
       this.slide('04a-ember-present', { transition: 'slide' });
