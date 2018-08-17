@@ -41,12 +41,12 @@ export default Component.extend({
       tooltips: { enabled: false },
       scales: {
         yAxes: [{
-          ticks: { beginAtZero: true },
+          ticks: { beginAtZero: true, fontSize: 50 },
           gridLines: { display:false }
         }],
         xAxes: [{
           display: true,
-          gridLines: { display: false }
+          gridLines: { display: false, fontSize: 50 }
         }]
       }
     };
