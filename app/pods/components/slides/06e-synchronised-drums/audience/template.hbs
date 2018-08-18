@@ -1,11 +1,14 @@
 {{#slide.content}}
-  <div class="self-center p-4 mb-4 text-indigo">
-    userAgent.os.info.name: {{userAgent.os.info.name}}
-    <h1 class="text-yellow">
+  <div class="self-center p-6 text-green text-center">
+    <h2 class="font-hershey">Synchronised Drums</h2>
+  </div>
+
+  <div class="border-2 border-dashed border-blue text-xl {{if playingSound 'bg-blue'}} text-yellow p-4 w-4/5 m-auto text-center">
+    <h1 class="font-hershey">
       {{#if playingSound}}
         {{playingSound}}
       {{else}}
-        -
+        &nbsp;
       {{/if}}
     </h1>
   </div>

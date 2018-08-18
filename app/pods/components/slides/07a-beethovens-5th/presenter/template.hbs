@@ -1,7 +1,29 @@
 {{#slide.content as |content|}}
 
-  <button class="border" onclick={{action (broadcast 'assignSymphonyInstruments')}}>Assign Instruments</button>
+  <p class="p-4 text-xl text-pink-light">
+    One of the reasons why the different lag times are so noticeable is due to the sharp attack times of the drum sounds. It shouldn’t be as noticeable with sounds that have a more gradual attack time, like the sound of instruments in an orchestra.
+  </p>
 
-  <button class="border" onclick={{action (broadcast 'playSymphony' (hash delayInMs=1000))}}>Play</button>
+  <p class="p-4 text-xl text-yellow">
+    I’ve put together 12 different orchestral sounds for a section of Beethoven’s 5th which I'll randomly assign to different devices.
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="Assign Instruments"
+      onClick=(action (broadcast 'assignSymphonyInstruments'))
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-green-light">
+    It's about 40 seconds long, here we go
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="Play Symphony"
+      onClick=(action (broadcast 'playSymphony' (hash delayInMs=1000)))
+    }}
+  </p>
 
 {{/slide.content}}

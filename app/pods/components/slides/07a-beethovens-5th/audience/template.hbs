@@ -1,12 +1,14 @@
-{{#slide.content}}
+{{#slide.content class="bg-yellow"}}
+  <div class="self-center p-6 text-yellow text-center">
+    <h2 class="font-hershey">Beethoven's 5th</h2>
+  </div>
 
-  <h1 class='text-center'>Beethoven's 5th</h1>
-
-  {{#if symphonyInstrument}}
-    <h4 class='text-center mt-6'>You are playing the</h4>
-    <h2 class='text-center'>{{symphonyInstrument}}</h2>
-  {{else}}
-    <h4 class='text-center'>...</h4>
-  {{/if}}
-
+  <div class="self-center p-6 text-blue text-center">
+    {{#if symphonyInstrument}}
+      <h4 class='text-center font-hershey'>You are playing the</h4>
+      <h1 class='text-center font-hershey'>{{symphonyInstrument}}</h1>
+    {{else}}
+      <h4 class='text-center'>...</h4>
+    {{/if}}
+  </div>
 {{/slide.content}}
