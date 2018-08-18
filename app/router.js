@@ -44,6 +44,7 @@ Router.map(function() {
       //ember-present
       this.slide('04a-ember-present', { transition: 'slide' });
       this.slide('04z-code-snippets', { transition: 'slide' });
+      this.slide('04z-scaling-slides', { transition: 'slide' });
       this.slide('04z-pointer', { transition: 'slide' });
 
       //login

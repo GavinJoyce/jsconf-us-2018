@@ -1,9 +1,15 @@
-{{#slide.content}}
+{{#slide.content class="bg-yellow" as |content|}}
+  <div class="self-center p-6 text-pink text-center">
+    <h2 class="font-hershey">Choose your section</h2>
+  </div>
 
-  <h1 class='text-center'>Choose your section</h1>
-
-  {{#each (array 'left' 'middle' 'right') as |section|}}
-    <button onclick={{action (update-user-data 'section' section)}}>{{section}}</button>
-  {{/each}}
-
+  <div class="self-center text-center">
+    {{#each (array 'left' 'middle' 'right') as |section|}}
+      {{content.button
+        text=section
+        onClick=(action (update-user-data 'section' section))
+        class=(if (eq section session.user.metadata.section) 'bg-pink hover:bg-pink')
+      }}
+    {{/each}}
+  </div>
 {{/slide.content}}
