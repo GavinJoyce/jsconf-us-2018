@@ -1,5 +1,10 @@
 {{#slide.content as |content|}}
-  <button onclick={{action (broadcast-to-role 'screen' 'videoNext')}}>
-    Next
-  </button>
+
+  <p class="p-4">
+    {{content.button
+      text="Video >"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
 {{/slide.content}}
