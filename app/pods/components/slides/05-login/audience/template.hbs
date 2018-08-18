@@ -1,17 +1,22 @@
-{{#slide.content}}
-  <div class="self-center p-4 mb-4">
-    <h1 class="text-yellow">
-      Please turn up your sound
-    </h1>
+{{#slide.content as |content|}}
+  <div class="self-center p-4 mb-4 flex">
+    <h1 class="flex-shrink">🔈</h1>
+    <h3 class="text-orange flex-1">Please turn up your sound</h3>
   </div>
 
-  {{#if audio.isSpriteLoaded}}
-    <p>Press these to test:</p>
+  <div class="self-center p-4 m-4 text-grey-darker">
+    {{#if audio.isSpriteLoaded}}
+      <p>Test with these 🥁</p>
 
-    {{#each (array 'kick' 'snare') as |sound|}}
-      <button onclick={{action 'play' sound target=audio}}>{{sound}}</button>
-    {{/each}}
-  {{else}}
-    <p>Loading audio sprite...</p>
-  {{/if}}
+      {{#each (array 'kick' 'snare' 'clap') as |sound|}}
+        {{content.button
+          text=sound
+          onClick=(action 'play' sound target=audio)
+          class="w-full mt-4"
+        }}
+      {{/each}}
+    {{else}}
+      <p>Loading audio...</p>
+    {{/if}}
+  </div>
 {{/slide.content}}

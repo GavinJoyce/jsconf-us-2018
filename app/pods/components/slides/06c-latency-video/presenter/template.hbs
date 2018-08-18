@@ -1,7 +1,51 @@
 {{#slide.content as |content|}}
 
-  <button onclick={{action (broadcast-to-role 'screen' 'videoNext')}}>
-    Next
-  </button>
+  <p class="p-4 text-xl text-pink-light">
+    Phones generally keep the same time, but there is still enough of a difference though that it wouldn't work for playing synchronised sounds.
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="▶️ Next"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    What we can do is ping the server and measure how long it takes, so 20 ms in this example.
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="▶️ Next"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-green-light">
+    We can assume that the request hop takes about the same time as the response, so 10ms per hop.
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="▶️ Next"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    And if the server includes its time as part of the response, we can then add the 10ms to that to get a fairly good approximation of the server time on all devices.
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="▶️ Next"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    That is the strategy that we took when testing latency on your phones just a moment ago.
+  </p>
 
 {{/slide.content}}
