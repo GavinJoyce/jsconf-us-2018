@@ -1,5 +1,14 @@
 {{#slide.content as |content|}}
-  <button onclick={{action (broadcast-to-role 'screen' 'videoNext')}}>
-    Play
-  </button>
+
+  <p class="p-4 text-xl text-pink-light">
+    So the intial portion of the Dublin talk went pretty well, this was a high point
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="▶️ Play"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
 {{/slide.content}}

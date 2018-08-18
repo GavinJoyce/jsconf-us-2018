@@ -1,5 +1,22 @@
 {{#slide.content as |content|}}
-  <button onclick={{action (broadcast-to-role 'screen' 'videoNext')}}>
-    Play
-  </button>
+
+  <p class="p-4 text-xl text-pink-light">
+    But then a few seconds later, it actually no longer worked
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="▶️ Play"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    So the server had crashed and I had no quick way to get it running again, so I couldn't really complete the second part of my talk
+  </p>
+
+  <p class="p-4 text-xl text-green-light">
+    Not a big deal, one of the themes of the night was taking risks, and I guess giving this talk was a little bit of a risk.
+  </p>
+
 {{/slide.content}}
