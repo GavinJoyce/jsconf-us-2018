@@ -1,0 +1,18 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    This is a piece of software called Ableton Live which is a digital audio workstation predominantly used for creating and performing electronic music.
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    I created a short track for this talk which uses 4 synthesizers which you can see here.
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="Toggle Synths"
+      onClick=(action (broadcast-to-role 'midi-gateway' 'sendKey') (hash key='p' commandOption=true))
+    }}
+  </p>
+
+{{/slide.content}}

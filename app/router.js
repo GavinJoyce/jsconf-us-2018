@@ -60,8 +60,8 @@ Router.map(function() {
 
       //Ableton live
       this.slide('08a-left-middle-right', { transition: 'slide' });
-      this.slide('08b-technology', { transition: 'slide' });
-      this.slide('08c-song', { transition: 'slide' });
+      this.slide('08b-live-technology', { transition: 'slide' });
+      this.slide('08c-live-song', { transition: 'slide' });
 
       //thanks
       this.slide('09-thanks', { transition: 'slide' });
