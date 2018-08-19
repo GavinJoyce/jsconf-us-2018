@@ -1,53 +1,228 @@
 {{#slide.content as |content|}}
 
-  <div>
-    {{content.button text="Switch to terminal" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToTerminal'))}}
-    {{content.button text="Switch to live" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToLive'))}}
-  </div>
-
-  <div>
-    {{content.button
-      text="Enable loop"
-      onClick=(action (broadcast-to-role 'midi-gateway' 'sendKey') (hash key='l'))
-    }}
-  </div>
-
-  <div>
-    {{content.button
-      text="Chorus"
-      onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=108))
-    }}
-  </div>
-
-  <p>
-    I'll first select someone on the left side at random to control the first instrument, Pad 1.
+  <p class="p-4 text-xl text-pink-light">
+    The black area on the right is also running the same Ember web app that's running my slides, I've setup both applications in a split screen.
   </p>
 
-  <div>
+  <p class="p-4 text-xl text-yellow">
+    I'm running a local node.js server which subscribes to real time events and translates these into MIDI notes which is the standard way of controlling Ableton Live
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Switch to terminal" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToTerminal'))}}
+    {{content.button text="Switch to live" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToLive'))}}
+  </p>
+
+  <p class="p-4 text-xl text-green-light">
+    I've arranged it up so that the four synthesizers can be controlled by people in the audience.
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Enable loop" onClick=(action (broadcast-to-role 'midi-gateway' 'sendKey') (hash key='l'))}}
+  </p>
+
+  <p class="p-4 text-sm text-center bg-yellow-light text-blue uppercase">
+    1. Pad 1
+  </p>
+
+  <p class="p-4">
+    I'll first select someone on the left side at random to control the first instrument, Pad 1
+  </p>
+
+  <p class="p-4">
     {{content.button text="+ Pad1" onClick=(action 'assignPerson' 'pad1' 'left')}}
     {{content.button text="- Pad1" onClick=(action 'unassignPerson' 'pad1')}}
-  </div>
+  </p>
 
-  <div>
+  <p class="p-4">
+    {{content.button text="Solo Pad1" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=102))}}
+  </p>
+
+  <p class="p-4">
+    Alright [NAME]!
+  </p>
+
+  <p class="p-4">
+    There's a circle on your screen which you can move around. Moving up and down and left to right will alter the character of the synth sound.
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Chorus" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=108))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="▶️" onClick=(action 'play')}}
+  </p>
+
+  <p class="p-4">
+    You should also see a yellow box on your screen.  When we're playing the song, this will move around and give you an idea of the area you should be in as the song progresses.
+  </p>
+
+  <p class="p-4">
+    Music is expression, so feel free to wander outside of the box if you feel like it.
+  </p>
+
+  <p class="p-4">
+    {{content.button text="⏹" onClick=(action 'stop')}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Un-solo Pad1" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=102))}}
+  </p>
+
+  <p class="p-4 text-sm text-center bg-yellow-light text-blue uppercase">
+    2. Pad 2
+  </p>
+
+  <p class="p-4">
+    Ok, I'll pick someone from the right side to control the second Pad.
+  </p>
+
+  <p class="p-4">
     {{content.button text="+ Pad2" onClick=(action 'assignPerson' 'pad2' 'right')}}
     {{content.button text="- Pad2" onClick=(action 'unassignPerson' 'pad2')}}
-  </div>
+  </p>
 
-  <div>
+  <p class="p-4">
+    [Name]! Perhaps you could stand up too? As before, move the circle around to get a feel for the different sounds in different sections.
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Solo Pad2" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=103))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Chorus" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=108))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="▶️" onClick=(action 'play')}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="⏹" onClick=(action 'stop')}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Un-solo Pad2" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=103))}}
+  </p>
+
+  <p class="p-4 text-sm text-center bg-yellow-light text-blue uppercase">
+    3. MiniV3
+  </p>
+
+  <p class="p-4">
+    Ok, let's pick the third player for the third synth from the middle section
+  </p>
+
+  <p class="p-4">
     {{content.button text="+ MiniV3" onClick=(action 'assignPerson' 'miniV3' 'middle')}}
     {{content.button text="- MiniV3" onClick=(action 'unassignPerson' 'miniV3')}}
-  </div>
+  </p>
 
-  <div>
+  <p class="p-4">
+    [Name] - perhaps you could stand up and move the little circle about?
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Solo MiniV3" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=104))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Chorus" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=108))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="▶️" onClick=(action 'play')}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="⏹" onClick=(action 'stop')}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Un-solo MiniV3" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=104))}}
+  </p>
+
+  <p class="p-4 text-sm text-center bg-yellow-light text-blue uppercase">
+    4. ProphetV3
+  </p>
+
+  <p class="p-4">
+    Alright, let's pick someone for the last instrument
+  </p>
+
+  <p class="p-4">
     {{content.button text="+ ProphetV3" onClick=(action 'assignPerson' 'prophetV3' 'middle')}}
     {{content.button text="- ProphetV3" onClick=(action 'unassignPerson' 'prophetV3')}}
-  </div>
+  </p>
 
-  <div>
+  <p class="p-4">
+    [Name] - perhaps you could stand up and move the circle about too?
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Solo ProphetV3" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=105))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Chorus" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=108))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="▶️" onClick=(action 'play')}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="⏹" onClick=(action 'stop')}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Un-solo ProphetV3" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=105))}}
+  </p>
+
+  <p class="p-4 text-sm text-center bg-yellow-light text-blue uppercase">
+    SONG
+  </p>
+
+  <p class="p-4">
+    Ok, let's try this. The pads come in first so, [Inst 3] and [Inst 4], you'll see a countdown on when your instruments will start.
+  </p>
+
+  <p class="p-4">
+    If you don't know what you're doing, that's ok - just make the circle follow the box
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Reenable Automation" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=109))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Disable Loop" onClick=(action (broadcast-to-role 'midi-gateway' 'sendKey') (hash key='l'))}}
+  </p>
+
+  <p class="p-4">
+    {{content.button text="Go to Intro" onClick=(action (broadcast-to-role 'midi-gateway' 'liveControl') (hash note=107))}}
+  </p>
+
+  <p class="p-4">
+    Alright, ready? Let's go.
+  </p>
+
+  <p class="p-4">
     {{content.button text="▶️" onClick=(action 'play')}}
     {{content.button text="⏹" onClick=(action 'stop')}}
-  </div>
+  </p>
 
+  <p class="p-4 text-sm text-center bg-yellow-light text-blue uppercase">
+    ---
+  </p>
 
+  <p class="p-4">
+    Switch to
+    {{content.button text="terminal" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToTerminal'))}}
+    {{content.button text="live" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToLive'))}}
+    {{content.button text="presentation" onClick=(action (broadcast-to-role 'midi-gateway' 'applicationControl') (hash name='switchToPresentation'))}}
+  </p>
 
 {{/slide.content}}

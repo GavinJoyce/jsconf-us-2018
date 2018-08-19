@@ -5,7 +5,7 @@ import { notEmpty } from '@ember/object/computed';
 import RunMixin from 'ember-lifeline/mixins/run';
 
 const PING_REQUESTS_TO_MAKE = 10;
-const MAXIMUM_ALLOWED_LATENCY_MS = 100;
+const MAXIMUM_ALLOWED_LATENCY_MS = 250;
 
 function randomNumber(max) {
   return Math.floor((Math.random() * max) + 1);
@@ -16,7 +16,7 @@ export default Service.extend(RunMixin, {
   session: inject(),
   userAgent: inject(),
 
-  addRandomAudienceLatency: true, //useful for testing locally
+  addRandomAudienceLatency: false, //useful for testing locally
 
   pongResponses: null,
   fastestResponse: null,
