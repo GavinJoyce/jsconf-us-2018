@@ -4,7 +4,7 @@ import { later } from '@ember/runloop';
 import { notEmpty } from '@ember/object/computed';
 import RunMixin from 'ember-lifeline/mixins/run';
 
-const PING_REQUESTS_TO_MAKE = 10;
+const PING_REQUESTS_TO_MAKE = 9;
 const MAXIMUM_ALLOWED_LATENCY_MS = 250;
 
 function randomNumber(max) {
@@ -116,7 +116,7 @@ export default Service.extend(RunMixin, {
       this.set('slowestResponse', slowestResponse);
 
       let realtime = this.get('realtime');
-      realtime.emit('updateUserMetaData', {
+      realtime.emit('updateUserMetadata', {
         latencyFastestInMs: fastestResponse.latencyInMs,
         latencySlowestInMs: slowestResponse.latencyInMs,
         latencyServerOffsetInMs: fastestResponse.serverOffsetInMs

@@ -1,17 +1,17 @@
 {{stay-awake}}
 
 {{#slide.content class="bg-yellow" as |content|}}
-  <div class="self-center p-6 text-green text-center">
+  <div class="self-center p-6 text-black text-center">
     <h2 class="font-hershey">Your network latency</h2>
   </div>
 
-  <div class="self-center">
+  <div class="self-center p-2 text-black">
     {{#if latency.hasResults}}
-      <h4>
-        {{#if latency.fastestResponse.latencyInMs}}
-          fastest: {{latency.fastestResponse.latencyInMs}}ms
-        {{/if}}
-      </h4>
+      {{#if latency.fastestResponse.latencyInMs}}
+        <h4 class="pb-2 text-green">
+          ✅ fastest: {{latency.fastestResponse.latencyInMs}}ms
+        </h4>
+      {{/if}}
       <ul>
       {{#each latency.pongResponses as |response|}}
         <li>
@@ -21,7 +21,7 @@
       </ul>
     {{else}}
       {{content.button
-        text="Test latency"
+        text="Test"
         onClick=(action 'testLatency')
       }}
     {{/if}}

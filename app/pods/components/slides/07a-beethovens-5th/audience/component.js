@@ -38,6 +38,6 @@ export default Component.extend(Realtime, {
     let symphonyInstrument = this.get('beethoven12Audio').getRandomSound();
 
     yield timeout(Math.random() * 3000); //some jitter
-    this.get('realtime').emit('updateUserMetaData', { symphonyInstrument });
+    this.get('realtime').emit('updateUserMetadata', { symphonyInstrument });
   })
 });

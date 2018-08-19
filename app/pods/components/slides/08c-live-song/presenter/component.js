@@ -27,7 +27,7 @@ export default Component.extend(Realtime, {
 
     if (user) {
       let socketId = user.socketId;
-      this.get('realtime').emit('updateUserMetaData', { socketId, instrument });
+      this.get('realtime').emit('updateUserMetadata', { socketId, instrument });
     }
   }),
 

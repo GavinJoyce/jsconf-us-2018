@@ -1,16 +1,16 @@
 {{stay-awake}}
 
 {{#slide.content class="bg-yellow"}}
-  <div class="self-center p-6 text-yellow text-center">
+  <div class="self-center p-6 text-black text-center">
     <h2 class="font-hershey">Beethoven's 5th</h2>
   </div>
 
-  <div class="self-center p-6 text-blue text-center">
+  <div class="self-center p-6 text-blue text-center font-hershey">
     {{#if symphonyInstrument}}
-      <h4 class='text-center font-hershey'>You are playing the</h4>
-      <h1 class='text-center font-hershey'>{{symphonyInstrument}}</h1>
+      <h4 class='text-center'>You are playing the</h4>
+      <h1 class='text-center'>{{symphonyInstrument}}</h1>
     {{else}}
-      <h4 class='text-center'>...</h4>
+      <h4 class='text-center text-red'>(please stand by)</h4>
     {{/if}}
   </div>
 {{/slide.content}}

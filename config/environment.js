@@ -18,24 +18,20 @@ module.exports = function(environment) {
           name: 'presenter',
           type: 'responsive',
           password: 'presenterpassword',
-          route: 'auth.presenter'
         },
         screen: {
           name: 'screen',
           type: 'scaled',
           password: 'screenpassword',
-          route: 'auth.screen'
         },
         audience: {
           name: 'audience',
           type: 'responsive',
-          route: 'auth.audience'
         },
         ableton: {
           name: 'ableton',
           type: 'responsive',
           password: 'abletonpassword',
-          route: 'auth.ableton'
         },
         'midi-gateway': {
           name: 'midi-gateway',
@@ -90,24 +86,20 @@ module.exports = function(environment) {
           name: 'presenter',
           type: 'responsive',
           password: 'presenterpassword', //TODO: from ENV
-          route: 'auth.presenter'
         },
         screen: {
           name: 'screen',
           type: 'scaled',
           password: 'screenpassword',
-          route: 'auth.screen'
         },
         audience: {
           name: 'audience',
           type: 'responsive',
-          route: 'auth.audience'
         },
         ableton: {
           name: 'ableton',
           type: 'responsive',
           password: 'abletonpassword',
-          route: 'auth.ableton'
         },
         'midi-gateway': {
           name: 'midi-gateway',
