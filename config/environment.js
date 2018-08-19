@@ -1,5 +1,7 @@
 'use strict';
 
+require('dotenv').config();
+
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'jsconf-us-2018',
@@ -18,29 +20,29 @@ module.exports = function(environment) {
           name: 'presenter',
           type: 'responsive',
           password: 'presenterpassword',
-          canContolPresentation: true,
+          canControlPresentation: true,
         },
         screen: {
           name: 'screen',
           type: 'scaled',
           password: 'screenpassword',
-          canContolPresentation: true,
+          canControlPresentation: true,
         },
         audience: {
           name: 'audience',
           type: 'responsive',
-          canContolPresentation: false,
+          canControlPresentation: false,
         },
         ableton: {
           name: 'ableton',
           type: 'responsive',
           password: 'abletonpassword',
-          canContolPresentation: true,
+          canControlPresentation: true,
         },
         'midi-gateway': {
           name: 'midi-gateway',
           password: 'midipassword',
-          canContolPresentation: true,
+          canControlPresentation: true,
         },
       }
     },
@@ -90,25 +92,30 @@ module.exports = function(environment) {
         presenter: {
           name: 'presenter',
           type: 'responsive',
-          password: 'presenterpassword', //TODO: from ENV
+          password: process.env.PRESENTER_PASSWORD,
+          canControlPresentation: true,
         },
         screen: {
           name: 'screen',
           type: 'scaled',
-          password: 'screenpassword',
+          password: process.env.SCREEN_PASSWORD,
+          canControlPresentation: true,
         },
         audience: {
           name: 'audience',
           type: 'responsive',
+          canControlPresentation: false,
         },
         ableton: {
           name: 'ableton',
           type: 'responsive',
-          password: 'abletonpassword',
+          password: process.env.ABLETON_PASSWORD,
+          canControlPresentation: true,
         },
         'midi-gateway': {
           name: 'midi-gateway',
-          password: 'midipassword',
+          password: process.env.MIDI_GATEWAY_PASSWORD,
+          canControlPresentation: true,
         },
       },
     };
