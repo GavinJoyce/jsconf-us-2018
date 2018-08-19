@@ -28,17 +28,9 @@
     margin: auto;
     background-color: #eee;
   }
-
-  iframe.screen {
-    background-color: #03a9f4;
-  }
-
-  iframe.presenter {
-    background-color: #e91e63;
-  }
 </style>
 
 <div class='iframe-grid'>
-  <iframe src='{{href-to "login"}}' class='scaled screen' />
-  <iframe src='{{href-to "login"}}' class='responsive presenter' />
+  <iframe src='{{href-to "login" (query-params role='screen')}}' class='scaled' />
+  <iframe src='{{href-to "login" (query-params role='presenter')}}' class='responsive' />
 </div>

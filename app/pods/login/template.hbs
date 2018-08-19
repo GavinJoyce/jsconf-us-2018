@@ -1,4 +1,4 @@
-<div class="pin absolute bg-yellow">
+<div class="pin absolute {{backgroundClass}}">
   {{#if session.isConnected}}
     <h2 class="p-4">Smartphone Symphony</h2>
 
@@ -8,45 +8,51 @@
       </h4>
     {{/if}}
 
-    <div class='p-4'>
-      {{input
-        value=username
-        placeholder="Your name"
-        enter="register"
-        classNames='shadow appearance-none rounded w-full py-2 px-3 text-grey-darker mb-3'
-        autoFocus=true
-      }}
-    </div>
-
-    {{#if showOptions}}
-      <div class='p-4 pt-2'>
+    {{#unless role}}
+      <div class='p-4'>
         {{input
-          value=password
-          placeholder="Password"
-          type="password"
+          value=username
+          placeholder="Your name"
+          enter="register"
           classNames='shadow appearance-none rounded w-full py-2 px-3 text-grey-darker mb-3'
+          autoFocus=true
         }}
       </div>
+    {{/unless}}
+
+    {{#if (or role showOptions)}}
+      {{#unless role}}
+        <div class='p-4 pt-2'>
+          {{input
+            value=password
+            placeholder="Password"
+            type="password"
+            classNames='shadow appearance-none rounded w-full py-2 px-3 text-grey-darker mb-3'
+          }}
+        </div>
+      {{/unless}}
 
       <div class='p-4 pt-2'>
         {{#each
           (array
-            (hash username='screen' password='screenpassword')
-            (hash username='presenter' password='presenterpassword')
-            (hash username='audience 1' password='')
-            (hash username='audeince 2' password='')
-            (hash username='audience 3' password='')
-            (hash username='audience 4' password='')
-            (hash username='ableton' password='abletonpassword')
+            (hash username='screen' role='screen' password='screenpassword')
+            (hash username='presenter' role='presenter' password='presenterpassword')
+            (hash username='audience 1' role='audience' password='')
+            (hash username='audeince 2' role='audience' password='')
+            (hash username='audience 3' role='audience' password='')
+            (hash username='audience 4' role='audience' password='')
+            (hash username='ableton' role='ableton' password='abletonpassword')
           ) as |login|
         }}
-          <button
+          {{#if (or (not role) (eq role login.role))}}
+            <button
               onclick={{action 'login' login.username login.password target=session}}
               disabled={{session.isLoggingIn}}
               class="bg-white hover:bg-blue text-blue-dark hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded"
             >
               {{login.username}}
             </button>
+          {{/if}}
         {{/each}}
       </div>
 
@@ -56,13 +62,15 @@
       {{#if session.loginTask.isRunning}}
         <div>loading...</div>
       {{else}}
-        <button
-          onclick={{action 'register'}}
-          disabled={{session.loginTask.isRunning}}
-          class='bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded'
-        >
-          Next »
-        </button>
+        {{#unless role}}
+          <button
+            onclick={{action 'register'}}
+            disabled={{session.loginTask.isRunning}}
+            class='bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded'
+          >
+            Next »
+          </button>
+        {{/unless}}
       {{/if}}
     </div>
   {{else}}

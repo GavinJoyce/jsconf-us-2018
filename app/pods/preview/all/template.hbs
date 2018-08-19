@@ -17,41 +17,29 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    border: 1px solid yellow;
+    border: 1px solid black;
   }
 
   iframe.responsive {
     width: 90%;
     margin: auto;
-    background-color: #eee;
   }
 
   iframe.screen {
-    background-color: #03a9f4;
      grid-column: span 5;
   }
 
-  iframe.presenter {
-    background-color: #e91e63;
-  }
-
-  iframe.audience {
-    background-color: #ffeb3b;
-  }
-
   iframe.ableton {
-    background-color: #aaff3b;
-     grid-row: span 2;
-
+    grid-row: span 2;
   }
 </style>
 
 <div class='iframe-grid'>
-  <iframe src='{{href-to "login"}}' class='scaled screen' />
-  <iframe src='{{href-to "login"}}' class='responsive ableton' />
-  <iframe src='{{href-to "login"}}' class='responsive presenter' />
-  <iframe src='{{href-to "login"}}' class='responsive audience' />
-  <iframe src='{{href-to "login"}}' class='responsive audience' />
-  <iframe src='{{href-to "login"}}' class='responsive audience' />
-  <iframe src='{{href-to "login"}}' class='responsive audience' />
+  <iframe src='{{href-to "login" (query-params role='screen')}}' class='scaled screen' />
+  <iframe src='{{href-to "login" (query-params role='ableton')}}' class='responsive ableton' />
+  <iframe src='{{href-to "login" (query-params role='presenter')}}' class='responsive presenter' />
+  <iframe src='{{href-to "login" (query-params role='audience')}}' class='responsive audience' />
+  <iframe src='{{href-to "login" (query-params role='audience')}}' class='responsive audience' />
+  <iframe src='{{href-to "login" (query-params role='audience')}}' class='responsive audience' />
+  <iframe src='{{href-to "login" (query-params role='audience')}}' class='responsive audience' />
 </div>
