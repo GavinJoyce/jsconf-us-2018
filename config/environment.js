@@ -18,24 +18,29 @@ module.exports = function(environment) {
           name: 'presenter',
           type: 'responsive',
           password: 'presenterpassword',
+          canContolPresentation: true,
         },
         screen: {
           name: 'screen',
           type: 'scaled',
           password: 'screenpassword',
+          canContolPresentation: true,
         },
         audience: {
           name: 'audience',
           type: 'responsive',
+          canContolPresentation: false,
         },
         ableton: {
           name: 'ableton',
           type: 'responsive',
           password: 'abletonpassword',
+          canContolPresentation: true,
         },
         'midi-gateway': {
           name: 'midi-gateway',
           password: 'midipassword',
+          canContolPresentation: true,
         },
       }
     },
