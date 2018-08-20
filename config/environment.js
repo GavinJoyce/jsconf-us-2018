@@ -92,13 +92,13 @@ module.exports = function(environment) {
         presenter: {
           name: 'presenter',
           type: 'responsive',
-          password: process.env.PRESENTER_PASSWORD,
+          password: 'presenterpassword',
           canControlPresentation: true,
         },
         screen: {
           name: 'screen',
           type: 'scaled',
-          password: process.env.SCREEN_PASSWORD,
+          password: 'screenpassword',
           canControlPresentation: true,
         },
         audience: {
@@ -109,12 +109,12 @@ module.exports = function(environment) {
         ableton: {
           name: 'ableton',
           type: 'responsive',
-          password: process.env.ABLETON_PASSWORD,
+          password: 'abletonpassword',
           canControlPresentation: true,
         },
         'midi-gateway': {
           name: 'midi-gateway',
-          password: process.env.MIDI_GATEWAY_PASSWORD,
+          password: 'midi-gateway-password',
           canControlPresentation: true,
         },
       },
