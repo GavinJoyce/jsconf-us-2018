@@ -1,0 +1,39 @@
+<div class="bg-white pin fixed">
+  {{#slide.content}}
+    <div class="text-3xl text-black text-left w-full mt-8 mb-2 ml-6">
+      <h1>.enqueue() - run in sequence</h1>
+    </div>
+
+    <div class="self-center p-4 w-full text-4xl">
+      {{code-snippet
+        name="inline.js"
+        source="export default Ember.Component.extend({
+  myTask: task(wait2Seconds).enqueue(),
+});"
+      }}
+    </div>
+
+    <div class="bg-grey-light p-4 m-4 text-4xl text-left w-full">
+      {{x-button
+        text="Perform task"
+        onClick=(perform startTask)
+        class=(if startTask.isRunning "bg-pink")
+      }}
+      {{x-button
+        text="Clear timeline"
+        onClick=(perform clearTasks)
+        class=(if clearTasks.isRunning "bg-pink")
+      }}
+      {{#if taskToRun.isRunning}}
+        {{x-button
+          text="Cancel All"
+          onClick=(perform cancelTasks)
+          class=(if cancelTasks.isRunning "bg-pink")
+        }}
+      {{/if}}
+    </div>
+
+    {{concurrency-graph task=taskToRun actionReceiver=concurrencyGraph}}
+  {{/slide.content}}
+</div>
+
