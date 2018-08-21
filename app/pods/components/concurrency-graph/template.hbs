@@ -1,0 +1,38 @@
+
+<svg class="w-full" style="padding: 50px; height: 600px;" >
+  {{#each trackers as |tracker|}}
+    <g height="100px">
+      {{#let (pick-from colors tracker.id) as |color|}}
+        {{#if tracker.hasStarted}}
+          <rect x="{{scale (subtract tracker.startTime lowerLimit) lowerLimit upperLimit}}%"
+            y={{pick-from labelHeights tracker.id}}
+            height="100px"
+            width="{{scale (width tracker.startTime tracker.endTime upperLimit) lowerLimit upperLimit}}%"
+            stroke="black"
+            fill={{color}}
+            fill-opacity=0.3
+          />
+        {{/if}}
+
+        {{#let (scale (subtract tracker.performTime lowerLimit) lowerLimit upperLimit) as |x|}}
+          <text x="{{sum 0.5 x}}%"
+            y={{sum 95 (pick-from labelHeights tracker.id)}}
+            fill={{color}}
+            font-size="40"
+            text-decoration={{if tracker.isCanceled 'line-through' 'none'}}
+            font-style={{if tracker.startTime 'normal' 'italic'}}
+          >
+            {{tracker.state}}
+          </text>
+          {{#let (pick-from labelHeights tracker.id) as |y|}}
+            <line x1="{{x}}%" y1={{y}} x2="{{x}}%" y2={{sum 100 y}} stroke={{color}} />
+          {{/let}}
+        {{/let}}
+      {{/let}}
+    </g>
+  {{/each}}
+
+  {{#let (scale timeElapsed lowerLimit upperLimit) as |x|}}
+    <line x1="{{x}}%" y1="0%" x2="{{x}}%" y2="100%" stroke="black" />
+  {{/let}}
+</svg>
