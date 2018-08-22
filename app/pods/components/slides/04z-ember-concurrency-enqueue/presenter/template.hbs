@@ -6,6 +6,13 @@
 
   <p class="p-4">
     {{content.button
+      text="toggle highlight"
+      onClick=(action (broadcast-to-role 'screen' 'toggleHighlight'))
+    }}
+  </p>
+
+  <p class="p-4">
+    {{content.button
       text="perform"
       onClick=(action (broadcast-to-role 'screen' 'startTask'))
     }}
