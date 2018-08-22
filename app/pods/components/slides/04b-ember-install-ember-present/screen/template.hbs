@@ -1,0 +1,34 @@
+{{backgrounds/gradient-background}}
+
+{{#slide.content}}
+
+  <div class="self-center m-8 w-full text-9xl">
+    <div class="px-16">
+      {{code-snippet
+        name="inline.js"
+        source="ember new my-presentation"
+      }}
+    </div>
+  </div>
+
+  <div class="self-center m-8 w-full text-9xl">
+     <div class="px-16">
+      {{code-snippet
+        name="inline.js"
+        source="ember install ember-present"
+      }}
+    </div>
+  </div>
+
+  <div class="self-center m-8 w-full text-9xl">
+    <div class="px-16">
+      {{code-snippet
+        name="inline.js"
+        source='ember generate slide "01-first"
+ember generate slide "02-second"
+ember generate slide "03-third"'
+      }}
+    </div>
+  </div>
+
+{{/slide.content}}

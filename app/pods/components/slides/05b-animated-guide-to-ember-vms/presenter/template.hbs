@@ -1,0 +1,14 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    ...
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="▶️ Play"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
+{{/slide.content}}

@@ -1,0 +1,12 @@
+{{#each videoUrls as |videoUrl|}}
+  {{#if (eq currentVideoUrl videoUrl)}}
+    {{x-video-slide
+      src=videoUrl
+      autoplay=true
+    }}
+  {{/if}}
+{{/each}}
+
+<div class="pin absolute text-6xl m-8">
+  <span class="bg-green p-4 shadow-lg">{{currentVideoUrl}}</span>
+</div>

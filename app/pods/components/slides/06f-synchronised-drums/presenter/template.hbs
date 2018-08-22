@@ -1,0 +1,93 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    Let’s see if it works. I’m going to trigger a kick drum to play on all devices.
+  </p>
+
+  <p class="p-4">
+    {{#each (array 'kick' 'clap') as |sound|}}
+      {{content.button
+        text=sound
+        onClick=(action (broadcast 'playSound' (hash sound=sound targetOs=targetOs delayInMs=1000)))
+      }}
+    {{/each}}
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    That sounds better than before, but there still seems to be a lag in some devices. I’ll play the drum beat again.
+  </p>
+
+  <p class="p-4">
+    {{#each (array '15step') as |sound|}}
+      {{content.button
+        text=sound
+        onClick=(action (broadcast 'playSound' (hash sound=sound targetOs=targetOs delayInMs=1000)))
+      }}
+    {{/each}}
+  </p>
+
+  <p class="p-4 text-xl text-green-light">
+    Let’s try just the iPhones ({{targetOs}})
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="All"
+      onClick=(action (mut targetOs) undefined)
+      class=(if (eq targetOs undefined) 'bg-pink hover:bg-pink-dark')
+    }}
+    {{content.button
+      text="iOS"
+      onClick=(action (mut targetOs) 'iOS')
+      class=(if (eq targetOs 'iOS') 'bg-pink hover:bg-pink-dark')
+    }}
+  </p>
+
+  <p class="p-4">
+    {{#each (array '15step') as |sound|}}
+      {{content.button
+        text=sound
+        onClick=(action (broadcast 'playSound' (hash sound=sound targetOs=targetOs delayInMs=1000)))
+      }}
+    {{/each}}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    Alright, and the Androids?
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="All"
+      onClick=(action (mut targetOs) undefined)
+      class=(if (eq targetOs undefined) 'bg-pink hover:bg-pink-dark')
+    }}
+    {{content.button
+      text="Android"
+      onClick=(action (mut targetOs) 'Android')
+      class=(if (eq targetOs 'Android') 'bg-pink hover:bg-pink-dark')
+    }}
+  </p>
+
+  <p class="p-4">
+    {{#each (array '15step') as |sound|}}
+      {{content.button
+        text=sound
+        onClick=(action (broadcast 'playSound' (hash sound=sound targetOs=targetOs delayInMs=1000)))
+      }}
+    {{/each}}
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    ...
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    I don't think it's a real word, but this is a good “audiolisation” of Android fragmentation.
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    Just like on iOS, the android devices correctly queue up the function to trigger the sound at the right time. It’s just that there is a wide range of different on-device latency before android OS actually plays the sound
+  </p>
+
+{{/slide.content}}

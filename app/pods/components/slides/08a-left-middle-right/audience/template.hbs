@@ -5,13 +5,15 @@
     <h2 class="font-hershey">Choose your section</h2>
   </div>
 
-  <div class="self-center text-center">
+  <div class="self-center text-center flex flex-col">
     {{#each (array 'left' 'middle' 'right') as |section|}}
-      {{content.button
-        text=section
-        onClick=(action (update-user-data 'section' section))
-        class=(if (eq section session.user.metadata.section) 'bg-pink hover:bg-pink')
-      }}
+      <div class="m-2">
+        {{content.button
+          text=section
+          onClick=(action (update-user-data 'section' section))
+          class=(if (eq section session.user.metadata.section) 'bg-pink hover:bg-pink')
+        }}
+      </div>
     {{/each}}
   </div>
 {{/slide.content}}
