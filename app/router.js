@@ -38,8 +38,8 @@ Router.map(function() {
       this.slide('03c-vicar-st-freeze', { transition: 'slide' });
       this.slide('03d-vicar-st-error', { transition: 'slide' });
       this.slide('03e-emberconf', { transition: 'slide' });
-      this.slide('03f-emberconf-working', { transition: 'slide' });
-      this.slide('03g-emberconf-errors', { transition: 'slide' });
+      this.slide('03f-emberconf-errors', { transition: 'slide' });
+      this.slide('03g-emberconf-working', { transition: 'slide' });
 
       //ember-present
       this.slide('04a-ember-present', { transition: 'slide' });
