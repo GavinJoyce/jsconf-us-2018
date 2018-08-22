@@ -1,0 +1,9 @@
+{{#slide.content}}
+  <div class="fixed pin bg-yellow">
+    {{counts-chart
+      countData=latencyCountData
+      title="Realtime Latency"
+      subtitle=(concat "Reports for " latencyCountData.count " clients")
+    }}
+  </div>
+{{/slide.content}}

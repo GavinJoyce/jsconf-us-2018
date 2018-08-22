@@ -1,0 +1,14 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    ... hello
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="Change video"
+      onClick=(action (broadcast-to-role 'screen' 'changeVideo'))
+    }}
+  </p>
+
+{{/slide.content}}

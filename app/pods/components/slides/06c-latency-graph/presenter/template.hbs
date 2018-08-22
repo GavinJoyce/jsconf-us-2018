@@ -1,0 +1,30 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    We can visualise the differences in latency across different phones by running some tests.
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    Please press the “Test Latency” button on your phone to run the test.
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="Force Test Latency"
+      onClick=(action (broadcast 'forceTestLatency'))
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-green-light">
+    This will ping the real-time server a number of times. You’ll likely see some variance in your own latency.
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    As the reports come in, we can see that there is a range of latencies across all the phones. The lowest latency on the left is [XXX ms] while the largest is [YYY ms].
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    One approach to dealing with the latency is to work out a shared understanding of what time it is across all devices. If we can do that, we can schedule sounds to play exactly at the same time
+  </p>
+
+{{/slide.content}}

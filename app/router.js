@@ -43,30 +43,42 @@ Router.map(function() {
 
       //ember-present
       this.slide('04a-ember-present', { transition: 'slide' });
-      this.slide('04z-code-snippets', { transition: 'slide' });
-      this.slide('04z-scaling-slides', { transition: 'slide' });
-      this.slide('04z-pointer', { transition: 'slide' });
-      this.slide('04z-animated-guide-to-ember-app', { transition: 'slide' });
-      this.slide('04z-animated-guide-to-ember-vms', { transition: 'slide' });
-      this.slide('04z-animated-guide-to-ember-vm-internals', { transition: 'slide' });
-      this.slide('04z-ember-concurrency-machty', { transition: 'slide' });
-      this.slide('04z-ember-concurrency-ember-present', { transition: 'slide' });
-      this.slide('04z-ember-concurrency-none', { transition: 'slide' });
-      this.slide('04z-ember-concurrency-drop', { transition: 'slide' });
-      this.slide('04z-ember-concurrency-enqueue', { transition: 'slide' });
-      this.slide('04z-ember-animated-video', { transition: 'slide' });
-      this.slide('04z-ember-animated-list', {  });
-      this.slide('04z-ember-animated-transition', { });
+      this.slide('04b-ember-install-ember-present', { transition: 'slide' });
+      this.slide('04c-router', { transition: 'slide' });
+      this.slide('04d-slide-components', { transition: 'slide' });
+      this.slide('04e-beginning', { transition: 'slide' });
+      this.slide('04f-middle', { transition: 'slide' });
+      this.slide('04g-end', { transition: 'slide' });
+      this.slide('04h-slide-role-components', { transition: 'slide' });
+      this.slide('04i-screen-and-presenter', { transition: 'slide' });
+      this.slide('04j-screen-presenter-and-audience', { transition: 'slide' });
+      this.slide('04k-code-snippets', { transition: 'slide' });
+      this.slide('04l-video', { transition: 'slide' });
+      this.slide('04m-background-colors', { transition: 'slide' });
+      this.slide('04n-tailwind-css-colors', { transition: 'slide' });
+      this.slide('04o-scaling-slides', { transition: 'slide' });
+      this.slide('04p-pointer', { transition: 'slide' });
 
-      //login
-      this.slide('05-login', { transition: 'slide' });
+      //ember-present addons
+      this.slide('05a-animated-guide-to-ember-app', { transition: 'slide' });
+      this.slide('05b-animated-guide-to-ember-vms', { transition: 'slide' });
+      this.slide('05c-animated-guide-to-ember-vm-internals', { transition: 'slide' });
+      this.slide('05d-ember-concurrency-machty', { transition: 'slide' });
+      this.slide('05e-ember-concurrency-ember-present', { transition: 'slide' });
+      this.slide('05f-ember-concurrency-none', { transition: 'slide' });
+      this.slide('05g-ember-concurrency-drop', { transition: 'slide' });
+      this.slide('05h-ember-concurrency-enqueue', { transition: 'slide' });
+      this.slide('05i-ember-animated-video', { transition: 'slide' });
+      this.slide('05j-ember-animated-list', {  });
+      this.slide('05k-ember-animated-transition', { });
 
       //realtime sounds
-      this.slide('06a-realtime-drums', { transition: 'slide' });
-      this.slide('06b-latency-graph', { transition: 'slide' });
-      this.slide('06c-latency-video', { transition: 'slide' });
-      this.slide('06d-clock-drift-graph', { transition: 'slide' });
-      this.slide('06e-synchronised-drums', { transition: 'slide' });
+      this.slide('06a-login', { transition: 'slide' });
+      this.slide('06b-realtime-drums', { transition: 'slide' });
+      this.slide('06c-latency-graph', { transition: 'slide' });
+      this.slide('06d-latency-video', { transition: 'slide' });
+      this.slide('06e-clock-drift-graph', { transition: 'slide' });
+      this.slide('06f-synchronised-drums', { transition: 'slide' });
 
       //beethoven's 5th
       this.slide('07a-beethovens-5th', { transition: 'slide' });

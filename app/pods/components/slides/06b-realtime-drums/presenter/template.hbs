@@ -1,0 +1,33 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    This is a simple example of triggering realtime drums on your phones. Every time I press a button, it send a real time message to your phone to play a particular sounds
+  </p>
+
+  <p class="p-4">
+    {{#each (array 'kick' 'clap') as |sound|}}
+      {{content.button
+        text=sound
+        onClick=(action (broadcast 'playSound' (hash sound=sound)))
+      }}
+    {{/each}}
+  </p>
+
+  <p class="p-4 text-xl text-yellow">
+    Notice that the drum sounds aren't playing at the same time on all phones. We’re all connected to a range of different mobile networks, and due to the nature of the Internet, even a single phone will see different latencies from one real time message to the next.
+  </p>
+
+  <p class="p-4 text-xl text-green-light">
+    This is even clearer if I trigger a drum beat to play, this will sound pretty bad.
+  </p>
+
+  <p class="p-4">
+    {{#each (array '15step') as |sound|}}
+      {{content.button
+        text=sound
+        onClick=(action (broadcast 'playSound' (hash sound=sound)))
+      }}
+    {{/each}}
+  </p>
+
+{{/slide.content}}
