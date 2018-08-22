@@ -21,16 +21,17 @@ Router.map(function() {
       this.slide('01-title', { transition: 'slide' });
 
       //intro
-      this.slide('02a-intro', { transition: 'slide' });
-      this.slide('02b-intercom', { transition: 'slide' });
-      this.slide('02c-books', { transition: 'slide' });
-      this.slide('02d-people', { transition: 'slide' });
-      this.slide('02e-intercomics', { transition: 'slide' });
-      this.slide('02f-events-sf', { transition: 'slide' });
-      this.slide('02g-events-london', { transition: 'slide' });
-      this.slide('02h-events-dublin', { transition: 'slide' });
-      this.slide('02i-vicar-st-empty', { transition: 'slide' });
-      this.slide('02j-vicar-st-full', { transition: 'slide' });
+      this.slide('02a-intercom-logo', { transition: 'slide' });
+      this.slide('02b-intercom-homepage', { transition: 'slide' });
+      this.slide('02c-intercom-embercom', { transition: 'slide' });
+      this.slide('02d-books', { transition: 'slide' });
+      this.slide('02e-people', { transition: 'slide' });
+      this.slide('02f-intercomics', { transition: 'slide' });
+      this.slide('02g-events-sf', { transition: 'slide' });
+      this.slide('02h-events-london', { transition: 'slide' });
+      this.slide('02i-events-dublin', { transition: 'slide' });
+      this.slide('02j-vicar-st-empty', { transition: 'slide' });
+      this.slide('02k-vicar-st-full', { transition: 'slide' });
 
       //previous talks
       this.slide('03a-tech', { transition: 'slide' });

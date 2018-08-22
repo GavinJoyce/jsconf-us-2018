@@ -1,0 +1,14 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    These are my four intercomics - all Ember themed
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="Video >"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
+{{/slide.content}}
