@@ -46,10 +46,17 @@ Router.map(function() {
       this.slide('04z-code-snippets', { transition: 'slide' });
       this.slide('04z-scaling-slides', { transition: 'slide' });
       this.slide('04z-pointer', { transition: 'slide' });
+      this.slide('04z-animated-guide-to-ember-app', { transition: 'slide' });
+      this.slide('04z-animated-guide-to-ember-vms', { transition: 'slide' });
+      this.slide('04z-animated-guide-to-ember-vm-internals', { transition: 'slide' });
       this.slide('04z-ember-concurrency-machty', { transition: 'slide' });
+      this.slide('04z-ember-concurrency-ember-present', { transition: 'slide' });
       this.slide('04z-ember-concurrency-none', { transition: 'slide' });
       this.slide('04z-ember-concurrency-drop', { transition: 'slide' });
       this.slide('04z-ember-concurrency-enqueue', { transition: 'slide' });
+      this.slide('04z-ember-animated-video', { transition: 'slide' });
+      this.slide('04z-ember-animated-list', {  });
+      this.slide('04z-ember-animated-transition', { });
 
       //login
       this.slide('05-login', { transition: 'slide' });

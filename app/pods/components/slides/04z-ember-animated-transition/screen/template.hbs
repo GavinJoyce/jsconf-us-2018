@@ -1,0 +1,13 @@
+{{backgrounds/gradient-background}}
+
+{{#slide.content}}
+
+  {{#each models.frameworkLogosByAge as |logoUrl|}}
+    {{#animated-container class="image-container"}}
+      {{#animated-value logoUrl group="images" use=transition duration=1000}}
+        <img class="mascot-detail-image w-64" src={{logoUrl}} />
+      {{/animated-value}}
+    {{/animated-container}}
+  {{/each}}
+
+{{/slide.content}}
