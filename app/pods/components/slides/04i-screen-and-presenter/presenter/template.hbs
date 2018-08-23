@@ -1,0 +1,18 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    Here's the example presentation with two roles running locally
+  </p>
+
+  <p class="p-4 text-xl text-blue-light">
+    The screen role is on the left and the presenter role on the right
+  </p>
+
+  <p class="p-4">
+    {{content.button
+      text="▶️ Play"
+      onClick=(action (broadcast-to-role 'screen' 'videoNext'))
+    }}
+  </p>
+
+{{/slide.content}}

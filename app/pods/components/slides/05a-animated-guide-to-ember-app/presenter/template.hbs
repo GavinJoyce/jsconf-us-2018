@@ -1,14 +1,18 @@
 {{#slide.content as |content|}}
 
-  <p class="p-4 text-xl text-pink-light">
-    ...
-  </p>
-
   <p class="p-4">
     {{content.button
       text="▶️ Play"
       onClick=(action (broadcast-to-role 'screen' 'videoNext'))
     }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    This is an animated slide that I created for another talk, "An animated guide to ember", that I gave at EmberConf two years ago
+  </p>
+
+   <p class="p-4 text-xl text-green-light">
+    The thing that I'm most excited about with ember-present is the possibility of publishing presentations as npm packages and allowing others to mix slides into their own presentations
   </p>
 
 {{/slide.content}}

@@ -1,15 +1,16 @@
 {{#slide.content as |content|}}
 
-  <p class="p-4 text-xl text-pink-light">
-    So here is that same component running in my slides and being controlled from my phone
-  </p>
-
   <p class="p-4">
     {{content.button
       text="toggle highlight"
       onClick=(action (broadcast-to-role 'screen' 'toggleHighlight'))
     }}
   </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    Another modifier, enqueue, waits until previous tasks have completed before executig
+  </p>
+
 
   <p class="p-4">
     {{content.button

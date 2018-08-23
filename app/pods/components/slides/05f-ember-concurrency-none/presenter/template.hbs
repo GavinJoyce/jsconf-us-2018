@@ -1,19 +1,37 @@
 {{#slide.content as |content|}}
 
   <p class="p-4 text-xl text-pink-light">
-    So here is that same component running in my slides and being controlled from my phone
+    So here are some of those slides running in my presentation and being controlled from my phone
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    Briefly, ember-concurrency gives us a declarative API for constraining concurrency
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    The core primitive is a `task`:
   </p>
 
   <p class="p-4">
     {{content.button
-      text="toggle task highlight"
+      text="highlight `task`"
       onClick=(action (broadcast-to-role 'screen' 'toggleTaskHighlight'))
     }}
+  </p>
 
+  <p class="p-4 text-xl text-pink-light">
+    Which accepts a generator function.
+  </p>
+
+  <p class="p-4">
     {{content.button
-      text="toggle generator highlight"
+      text="highlight `wait2Seconds`"
       onClick=(action (broadcast-to-role 'screen' 'toggleGeneratorHighlight'))
     }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    In this case, `wait2Seconds` is simple generator function which pauses for two second before completing
   </p>
 
   <p class="p-4">
@@ -31,6 +49,10 @@
       text="clear"
       onClick=(action (broadcast-to-role 'screen' 'clearTasks'))
     }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    If I run a bunch of these tasks, by default ember-concurrency isn't going to prevent them from overlapping
   </p>
 
 {{/slide.content}}
