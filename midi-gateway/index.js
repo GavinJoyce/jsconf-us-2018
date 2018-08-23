@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const midi = require('midi');
 const midiOutput = new midi.output();
 const midiInput = new midi.input();
@@ -9,7 +11,7 @@ midiInput.ignoreTypes(false, false, false); //(Sysex, Timing, Active Sensing)
 const exec = require("child_process").exec;
 const io = require('socket.io-client');
 // const socket = io('http://localhost:5200');
-const socket = io('http://34.201.128.169:5300');
+const socket = io('http://34.201.128.169:5300'); //for jsconf presentation
 
 const INSTRUMENTS = {
   pad1: { xNote: 1, yNote: 2 },
@@ -89,7 +91,7 @@ function instrumentXy(data) {
 socket.on('connect', function() {
   console.log('CONNECT');
 
-  socket.emit('login', { username: 'midi-gateway', password: 'midipassword' }, (response) => {
+  socket.emit('login', { username: 'midi-gateway', password: process.env.MIDI_GATEWAY_PASSWORD,   }, (response) => {
     console.log('LOGIN', response);
 
     socket.on('debug', _debug);
