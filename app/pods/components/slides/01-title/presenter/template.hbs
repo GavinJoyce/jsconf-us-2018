@@ -7,7 +7,7 @@
   <div class="self-center p-4 m-4 text-grey-darker">
     {{#each (array 'kick' 'snare' 'clap') as |sound|}}
       {{content.button
-        text="toggle highlight"
+        text=sound
         onClick=(action (broadcast-to-role 'screen' 'playSound') (hash sound=sound))
         class="w-full mt-4"
       }}
