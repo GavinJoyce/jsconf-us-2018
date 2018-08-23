@@ -1,14 +1,22 @@
 {{#slide.content as |content|}}
 
-  <p class="p-4 text-xl text-pink-light">
-    ...
-  </p>
-
   <p class="p-4">
     {{content.button
       text="▶️ Play"
       onClick=(action (broadcast-to-role 'screen' 'videoNext'))
     }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    Here's another, more detailed, animation that I created a couple of years ago for the same talk.
+  </p>
+
+  <p class="p-4 text-xl text-yellow-light">
+    It's a little out of date now, but it's showing the innerworkings of the rendering virtual machine as it executes opcodes while doing an initial render
+  </p>
+
+  <p class="p-4 text-xl text-blue-light">
+    With ember-present allowing these to be resused, I'm hoping to soon redo these animations so that many other people can give presentations at conferences and meetups and share some of the unique technical approaches that ember takes
   </p>
 
 {{/slide.content}}

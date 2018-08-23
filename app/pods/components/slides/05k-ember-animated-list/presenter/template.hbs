@@ -1,0 +1,52 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4 text-xl text-pink-light">
+    Here's a similar slide using ember-animated.
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    If I click left and right on my phone, I can randomly move a logo from one side to the other:
+  </p>
+
+  <p class="p-4 flex">
+    {{content.button
+      text="◀️"
+      onClick=(action (broadcast-to-role 'screen' 'moveRandomLeft'))
+      class="flex-1 m-4 p-4"
+    }}
+
+    {{content.button
+      text="▶️"
+      onClick=(action (broadcast-to-role 'screen' 'moveRandomRight'))
+      class="flex-1 m-4 p-4"
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    The amazing thing about ember-animated, is that all I'm doing is definig where the lists should be rendered and removing and inserting items from two arrays
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    The natural movement emerges from the ember-animated sprites which are coordinating behind the scenes
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    If I mash the left and right buttons I can make them dance:
+  </p>
+
+  <p class="p-4 flex">
+    {{content.button
+      text="◀️"
+      onClick=(action (broadcast-to-role 'screen' 'moveRandomLeft'))
+      class="flex-1 m-4 p-4"
+    }}
+
+    {{content.button
+      text="▶️"
+      onClick=(action (broadcast-to-role 'screen' 'moveRandomRight'))
+      class="flex-1 m-4 p-4"
+    }}
+  </p>
+
+{{/slide.content}}
+

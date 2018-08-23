@@ -41,6 +41,7 @@ Router.map(function() {
       this.slide('03e-emberconf', { transition: 'slide' });
       this.slide('03f-emberconf-errors', { transition: 'slide' });
       this.slide('03g-emberconf-working', { transition: 'slide' });
+      this.slide('03h-lennex', { transition: 'slide' });
 
       //ember-present
       this.slide('04a-ember-present', { transition: 'slide' });
@@ -69,9 +70,10 @@ Router.map(function() {
       this.slide('05f-ember-concurrency-none', { transition: 'slide' });
       this.slide('05g-ember-concurrency-drop', { transition: 'slide' });
       this.slide('05h-ember-concurrency-enqueue', { transition: 'slide' });
-      this.slide('05i-ember-animated-video', { transition: 'slide' });
-      this.slide('05j-ember-animated-list', {  });
-      this.slide('05k-ember-animated-transition', { });
+      this.slide('05i-ember-concurrency-restartable', { transition: 'slide' });
+      this.slide('05j-ember-animated-video', { transition: 'slide' });
+      this.slide('05k-ember-animated-list', {  });
+      this.slide('05l-ember-animated-transition', { });
 
       //realtime sounds
       this.slide('06a-login', { transition: 'slide' });

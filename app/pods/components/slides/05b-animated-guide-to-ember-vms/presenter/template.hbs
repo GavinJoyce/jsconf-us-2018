@@ -1,14 +1,14 @@
 {{#slide.content as |content|}}
 
-  <p class="p-4 text-xl text-pink-light">
-    ...
-  </p>
-
   <p class="p-4">
     {{content.button
       text="▶️ Play"
       onClick=(action (broadcast-to-role 'screen' 'videoNext'))
     }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    Here's a high level animated slide which could be reused in talks about Ember's rendering engine
   </p>
 
 {{/slide.content}}

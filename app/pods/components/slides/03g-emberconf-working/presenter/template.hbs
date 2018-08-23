@@ -1,14 +1,18 @@
 {{#slide.content as |content|}}
 
-  <p class="p-4 text-xl text-pink-light">
-    ...
-  </p>
-
   <p class="p-4">
     {{content.button
       text="▶️ Play"
       onClick=(action (broadcast-to-role 'screen' 'videoNext'))
     }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    Luckily they were  minor UI issues and the talk broadly worked as I'd hoped.
+  </p>
+
+  <p class="p-4 text-xl text-blue-light">
+    As luck would have it, the third instrument was actually controlled by someone in Zimbabwe
   </p>
 
 {{/slide.content}}

@@ -1,7 +1,11 @@
 {{#slide.content as |content|}}
 
   <p class="p-4 text-xl text-pink-light">
-    So here is that same component running in my slides and being controlled from my phone
+    If you want to constrain concurrency, you can use task modifiers
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    Here we're using the `drop` modifier
   </p>
 
   <p class="p-4">
@@ -9,6 +13,10 @@
       text="toggle highlight"
       onClick=(action (broadcast-to-role 'screen' 'toggleHighlight'))
     }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    With the `drop` modifier, if there is already an instance of the task running, new tasks are immediately cancelled
   </p>
 
   <p class="p-4">

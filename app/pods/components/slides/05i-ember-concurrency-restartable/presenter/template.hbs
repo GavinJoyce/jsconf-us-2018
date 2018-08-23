@@ -1,0 +1,33 @@
+{{#slide.content as |content|}}
+
+  <p class="p-4">
+    {{content.button
+      text="toggle highlight"
+      onClick=(action (broadcast-to-role 'screen' 'toggleHighlight'))
+    }}
+  </p>
+
+  <p class="p-4 text-xl text-pink-light">
+    probably the task modifier most commonly used, `restartable` cancels any prior task instances before executing the new one
+  </p>
+
+
+  <p class="p-4">
+    {{content.button
+      text="perform"
+      onClick=(action (broadcast-to-role 'screen' 'startTask'))
+    }}
+
+    {{content.button
+      text="cancel"
+      onClick=(action (broadcast-to-role 'screen' 'cancelTasks'))
+    }}
+
+    {{content.button
+      text="clear"
+      onClick=(action (broadcast-to-role 'screen' 'clearTasks'))
+    }}
+  </p>
+
+{{/slide.content}}
+
