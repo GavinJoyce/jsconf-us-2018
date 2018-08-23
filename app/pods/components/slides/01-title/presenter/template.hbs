@@ -5,19 +5,13 @@
   </p>
 
   <div class="self-center p-4 m-4 text-grey-darker">
-    {{#if audio.isSpriteLoaded}}
-      <p>Test with these 🥁</p>
-
-      {{#each (array 'kick' 'snare' 'clap') as |sound|}}
-        {{content.button
-          text=sound
-          onClick=(action 'play' sound target=audio)
-          class="w-full mt-4"
-        }}
-      {{/each}}
-    {{else}}
-      <p>Loading audio...</p>
-    {{/if}}
+    {{#each (array 'kick' 'snare' 'clap') as |sound|}}
+      {{content.button
+        text="toggle highlight"
+        onClick=(action (broadcast-to-role 'screen' 'playSound') (hash sound=sound))
+        class="w-full mt-4"
+      }}
+    {{/each}}
   </div>
 
 {{/slide.content}}
