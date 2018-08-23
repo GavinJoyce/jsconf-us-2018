@@ -12,12 +12,17 @@ export default Component.extend(Realtime, {
     return song[this.get('instrument')];
   }),
   beat: undefined,
+  showUsefulLinks: false,
 
   didInsertElement() {
     this._super(...arguments);
 
     this.addRealtimeListener('songBeat', ({ beat }) => {
       this.set('beat', beat);
+    });
+
+    this.addRealtimeListener('showUsefulLinks', () => {
+      this.set('showUsefulLinks', true);
     });
   },
 

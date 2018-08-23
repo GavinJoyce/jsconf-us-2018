@@ -9,6 +9,30 @@
       }}
     </div>
   {{else}}
-    Please stand by...
+    {{#if showUsefulLinks}}
+      <div class="fixed pin bg-yellow p-8 text-black">
+        <p class="p-2 font-bold">Useful links:</p>
+
+        <p class="p-2">
+          <a href="https://twitter.com/gavinjoyce" class="text-blue no-underline">
+            🐦 @gavinjoyce
+          </a>
+        </p>
+        <p class="p-2">
+          <a href="https://github.com/gavinjoyce/jsconf-us-2018" class="text- no-underline">
+            🗣 source code for this presentation
+          </a>
+        </p>
+        <p class="p-2">
+          <a href="https://github.com/gavinjoyce/ember-present" class="text-blue no-underline">
+            ➕ ember-present addon
+          </a>
+        </p>
+      </div>
+    {{else}}
+      <div class="fixed pin bg-yellow p-8 text-black">
+        Please stand by...
+      </div>
+    {{/if}}
   {{/if}}
 {{/slide.content}}
